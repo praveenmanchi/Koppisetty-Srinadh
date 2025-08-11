@@ -1,0 +1,107 @@
+---
+/* Foundations */
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+
+/* UX/UI Process */
+const processs = [
+  {
+    aosDuration: "2000",
+    title: "Discovery & Research",
+    description:
+      "Kickoff workshops, stakeholder interviews, and user research to understand goals, constraints, and audience needs. We synthesize insights into clear problem statements and success metrics.",
+  },
+  {
+    aosDuration: "2150",
+    title: "UX Strategy & IA",
+    description:
+      "Translate insights into a product strategy, user journeys, and information architecture. We define personas, scenarios, and core flows to align business outcomes with user value.",
+  },
+  {
+    aosDuration: "2300",
+    title: "Wireframing",
+    description:
+      "Low- to mid-fidelity wireframes explore layout, hierarchy, and navigation. Rapid iterations validate content priorities and reduce risk before investing in visuals.",
+  },
+  {
+    aosDuration: "2450",
+    title: "UI Design & Design System",
+    description:
+      "High-fidelity screens, typography, color, and component patterns come together in a cohesive design system. Accessibility and responsiveness are baked in from the start.",
+  },
+  {
+    aosDuration: "2600",
+    title: "Accessibility Audit",
+    description:
+      "Review and test designs against WCAG guidelines, color contrast ratios, and assistive technology compatibility to ensure inclusive experiences for all users.",
+  },
+  {
+    aosDuration: "2750",
+    title: "Prototyping & Interactions",
+    description:
+      "Interactive prototypes demonstrate motion, states, and micro-interactions. These artifacts communicate intent, reduce ambiguity, and accelerate stakeholder buy-in.",
+  },
+  {
+    aosDuration: "2900",
+    title: "Usability Testing",
+    description:
+      "Conduct moderated and unmoderated testing to validate design decisions, uncover friction points, and gather qualitative and quantitative feedback.",
+  },
+  {
+    aosDuration: "3050",
+    title: "Handoff & Launch",
+    description:
+      "Prepare dev-ready specs, assets, and tokens. Collaborate closely during implementation, support QA, and ensure a smooth product launch—then track post-launch metrics for continuous improvement.",
+  },
+];
+---
+
+<section>
+  <Wrapper variant="standard" class="pt-24 pb-12">
+    <div class="max-w-xl overflow-hidden">
+      <Text
+        tag="h3"
+        variant="textXL"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+        class="dark:text-white text-base-900 text-balance"
+      >
+        I design usable, beautiful products by aligning user needs with business outcomes—then validating every step.
+      </Text>
+    </div>
+
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-1 pt-4 relative before:absolute after:absolute before:bg-black after:bg-base-200 dark:before:bg-base-50 dark:after:bg-base-50/10 before:top-0 before:left-0 before:h-px before:w-18 after:top-0 after:right-0 after:left-20 after:h-px"
+    >
+      {
+        processs.map((process, index) => (
+          <div class="flex gap-2 relative overflow-hidden pb-12">
+            <span
+              class="text-9xl font-semibold right-0 text-base-100 dark:text-base-800 lg:text-15xl absolute"
+              data-aos="fade-left"
+              data-aos-duration={process.aosDuration}
+            >
+              {index + 1}
+            </span>
+            <div class="relative">
+              <Text
+                tag="h4"
+                variant="textBase"
+                class="dark:text-white text-base-900 font-medium"
+              >
+                {process.title}
+              </Text>
+              <Text
+                tag="h4"
+                variant="textSM"
+                class="dark:text-base-400 mt-4 text-base-500 text-balance lg:text-balance"
+              >
+                {process.description}
+              </Text>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </Wrapper>
+</section>

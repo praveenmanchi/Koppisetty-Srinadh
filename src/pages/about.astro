@@ -1,0 +1,217 @@
+---
+// Assets
+import { Image } from "astro:assets";
+import Avatar from "@/images/avatar.jpeg";
+// Fundations
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Text from "@/components/fundations/elements/Text.astro";
+import Wrapper from "@/components/fundations/containers/Wrapper.astro";
+// Components
+import LogoCloud from "@/components/assets/LogoCloud.astro";
+// Awards
+const awards = [
+  {
+    url: "#_",
+    name: "Koppisetty Srinadh",
+    award: "Automobile Workshop Participant",
+    organization: "Renault Company",
+    project: "Automobile Workshop",
+  },
+  {
+    url: "#_",
+    name: "Koppisetty Srinadh",
+    award: "Member",
+    organization: "Rotary Club of GITAM University",
+    project: "University Chapter",
+  },
+];
+// Experience
+// Experience / Education & Projects (from resume)
+const experience = [
+  {
+    yearStart: "2018",
+    yearEnd: "2018",
+    role: "Industrial Trainee — Compressor Designs",
+    company: "BHEL, Hyderabad (2 months)",
+  },
+  {
+    yearStart: "2018",
+    yearEnd: "2018",
+    role: "Industrial Trainee — Compressor Designs",
+    company: "CIPET, Vijayawada (2 months)",
+  },
+  {
+    yearStart: "2018",
+    yearEnd: "2018",
+    role: "Project Intern — Manufacturing of Cylinder Liners",
+    company: "Kusalava Ltd, VSEZ Visakhapatnam",
+  },
+  {
+    yearStart: "2014",
+    yearEnd: "2018",
+    role: "B.Tech in Mechanical Engineering — CGPA 6.78",
+    company: "GITAM Institute of Technology, GITAM University",
+  },
+  {
+    yearStart: "2012",
+    yearEnd: "2014",
+    role: "Intermediate (MPC) — 79.8%",
+    company: "Sashi College, Velivennu",
+  },
+  {
+    yearStart: "2012",
+    yearEnd: "2012",
+    role: "CBSE — CGPA 7.2",
+    company: "C R Reddy School, Eluru",
+  },
+];
+---
+
+<BaseLayout>
+  <section>
+    <Wrapper variant="standard" class="pt-8 pb-12">
+      <div class="max-w-xl overflow-hidden">
+        <Text
+          tag="h1"
+          variant="textXL"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="dark:text-white text-base-900 text-balance"
+        >
+          I apply my experience in UX/UI design and product development to solve complex user problems and create seamless digital experiences.
+        </Text>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 items-start gap-8 mt-2">
+        <Text
+          tag="p"
+          variant="textBase"
+          class="mt-2 text-base-500 dark:text-base-300 lg:text-balance order-first lg:order-last"
+        >
+          I'm <strong>Koppisetty Srinadh</strong>, based out of USA., a UX/UI Designer and Product Designer with ~7 years of experience leading end-to-end UX/UI design for web, mobile, HCI, HMI and GenAI enterprise platforms for B2B & B2C. I have proven success in solving complex user problems through UX research and visual design across AI/ML, OTT, renewable, defence, aviation, and automotive sectors.
+          <br />
+          <br />
+          I specialize in building design systems, leading design strategy, and collaborating with cross-functional Agile teams to deliver business-impactful solutions. At Deloitte, I led the development of CortexAI suite applications consumed by 10K+ enterprise users, accelerating weekly revenues by ~$2M through intuitive asset marketplaces with cloud-native platforms.
+          <br />
+          <br />
+          My approach combines Design Thinking and Lean UX methods with modern development practices, accessibility principles, and pixel-perfect design execution. I'm passionate about emerging technologies, user-centered design, and creating scalable solutions that bridge the gap between user needs and business objectives. I also created self-initiated platforms like UXAI, Designboard.club, and Iconartboard for AI-powered UX support and learning resources.
+        </Text>
+
+        <Image
+          width={1000}
+          height={2000}
+          src={Avatar}
+          alt="Praveen Manchi - UX/UI Designer"
+          class="w-full aspect-square mt-2 object-cover object-right"
+        />
+      </div>
+    </Wrapper>
+  </section>
+  <section>
+    <Wrapper class="py-12">
+      <div class="overflow-hidden">
+        <Text
+          tag="h3"
+          variant="textLG"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="dark:text-white text-base-900 text-balance"
+        >
+          Awards &amp; honors
+        </Text>
+      </div>
+      <ul
+        role="list"
+        class="flex flex-col gap-1 mt-1 relative before:absolute after:absolute before:bg-black after:bg-base-200 dark:before:bg-base-50 dark:after:bg-base-50/10 before:top-0 before:left-0 before:h-px before:w-18 after:top-0 divide-y last-of-type:border-b last-of-type:border-base-200 dark:last-of-type:border-base-900 divide-base-200 dark:divide-base-900 after:right-0 after:left-20 after:h-px"
+      >
+        {
+          awards.map((award) => (
+            <li class="grid grid-cols-2 md:grid-cols-4 items-baseline lg:grid-cols-4 py-2 relative">
+              <a
+                href={award.url}
+                class="absolute inset-0 z-10"
+                title={award.name}
+                aria-label={award.name}
+              />
+              <Text
+                tag="h3"
+                variant="textBase"
+                class="text-base-900  dark:text-white"
+              >
+                {award.name}
+              </Text>
+              <Text
+                tag="p"
+                variant="textSM"
+                class="text-base-500 dark:text-base-400"
+              >
+                {award.award}
+              </Text>
+              <Text
+                tag="p"
+                variant="textSM"
+                class="text-base-500 dark:text-base-500"
+              >
+                {award.organization}
+              </Text>
+              <Text
+                tag="p"
+                variant="textSM"
+                class="text-base-500 dark:text-base-600"
+              >
+                {award.project}
+              </Text>
+            </li>
+          ))
+        }
+      </ul>
+    </Wrapper>
+  </section>
+  <LogoCloud />
+  <section class="overflow-hidden relative">
+    <Wrapper class="py-12">
+      <div class="overflow-hidden">
+        <Text
+          tag="h3"
+          variant="textLG"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="dark:text-white text-base-900 text-balance"
+        >
+          Experience
+        </Text>
+      </div>
+      <ul
+        role="list"
+        class="grid grid-cols-2 md:grid-cols-3 gap-y-8 mt-1 relative before:absolute after:absolute before:bg-black after:bg-base-200 dark:before:bg-base-50 dark:after:bg-base-50/10 before:top-0 before:left-0 before:h-px before:w-18 after:top-0 divide-base-200 dark:divide-base-900 after:right-0 after:left-20 after:h-px"
+      >
+        {
+          experience.map((job) => (
+            <li class=" items-baseline lg:grid-cols-4 py-2 ">
+              <Text
+                tag="h3"
+                variant="textBase"
+                class="text-base-900  dark:text-white"
+              >
+                {job.yearStart} - {job.yearEnd}
+              </Text>
+              <Text
+                tag="p"
+                variant="textSM"
+                class="text-base-500 dark:text-base-400"
+              >
+                {job.role}
+              </Text>
+              <Text
+                tag="p"
+                variant="textSM"
+                class="text-base-500 dark:text-base-500"
+              >
+                {job.company}
+              </Text>
+            </li>
+          ))
+        }
+      </ul>
+    </Wrapper>
+  </section>
+</BaseLayout>
