@@ -65,6 +65,6 @@ images:
   - url: "/work/granular/3.jpeg"
     alt: "Subscription management dashboard showing delivery preferences and coffee selection"
 thumbnail:
-  url: "/work/granular/thumbnail.jpeg"
+  url: "/work/granular/thumbnail.jpg"
   alt: "Granular Coffee e-commerce platform project thumbnail"
 ---

@@ -39,6 +39,6 @@ images:
   - url: "/work/sekkaa/3.jpeg"
     alt: "Sekkaa branding materials and sustainable packaging solutions"
 thumbnail:
-  url: "/work/sekkaa/thumbnail.jpeg"
+  url: "/work/sekkaa/thumbnail.jpg"
   alt: "Sekkaa sustainable packaging project thumbnail"
 ---

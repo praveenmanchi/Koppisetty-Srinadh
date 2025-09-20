@@ -63,6 +63,6 @@ images:
   - url: "/work/sinequanone/3.jpeg"
     alt: "User profile dashboard with achievement badges and fitness metrics"
 thumbnail:
-  url: "/work/sinequanone/thumbnail.jpeg"
+  url: "/work/sinequanone/thumbnail.jpg"
   alt: "Sinequanone fitness tracking mobile app project thumbnail"
 ---

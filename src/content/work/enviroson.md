@@ -43,6 +43,6 @@ images:
   - url: "/work/enviroson/3.jpeg"
     alt: "Enviroson brand guidelines and marketing collateral design"
 thumbnail:
-  url: "/work/enviroson/thumbnail.jpeg"
+  url: "/work/enviroson/thumbnail.jpg"
   alt: "Enviroson solar energy project thumbnail"
 ---

@@ -32,13 +32,13 @@ credits:
     role: "Frontend Developer"  
 
 images:
-  - url: "/work/earthwise/1.jpeg"
+  - url: "/work/earthwise/1.jpg"
     alt: "EarthWise renewable energy platform dashboard interface"
-  - url: "/work/earthwise/2.jpeg"
+  - url: "/work/earthwise/2.jpg"
     alt: "EarthWise mobile application user interface design"
-  - url: "/work/earthwise/3.jpeg"
+  - url: "/work/earthwise/3.jpg"
     alt: "EarthWise branding and visual identity system"
 thumbnail:
-  url: "/work/earthwise/thumbnail.jpeg"
+  url: "/work/earthwise/thumbnail.jpg"
   alt: "EarthWise renewable energy project thumbnail"
 ---

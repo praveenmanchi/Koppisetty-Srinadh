@@ -65,6 +65,6 @@ images:
   - url: "/work/stucko/3.jpeg"
     alt: "Team analytics dashboard displaying productivity insights and project metrics"
 thumbnail:
-  url: "/work/stucko/thumbnail.jpeg"
+  url: "/work/stucko/thumbnail.jpg"
   alt: "Stucko SaaS project management platform thumbnail"
 ---
