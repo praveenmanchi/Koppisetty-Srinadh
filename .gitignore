@@ -30,3 +30,4 @@ dist/
 
 # Optional: Log files
 *.log
+.vercel

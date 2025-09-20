@@ -101,6 +101,35 @@ const { frontmatter, previous, next } = Astro.props;
             ))
           }
         </div>
+        <div class="mt-8">
+            <Text
+              tag="h4"
+              variant="textSM"
+              class="dark:text-white text-base-900">Credits</Text
+            >
+            <div class="grid grid-cols-2 lg:grid-cols-4 w-full">
+              {
+                frontmatter.credits.map((credit) => (
+                  <div class="mt-4">
+                    <Text
+                      tag="p"
+                      variant="textSM"
+                      class="text-base-950  dark:text-white text-balance"
+                    >
+                      {credit.name}
+                    </Text>
+                    <Text
+                      tag="p"
+                      variant="textSM"
+                      class="text-base-500  dark:text-base-400 text-balance"
+                    >
+                      {credit.role}
+                    </Text>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
       </div>
       <div class="grid grid-cols-2 gap-1 mt-8">
         {
@@ -181,35 +210,7 @@ const { frontmatter, previous, next } = Astro.props;
                 ))
             }
           </div>
-          <div class="mt-8">
-            <Text
-              tag="h4"
-              variant="textSM"
-              class="dark:text-white text-base-900">Credits</Text
-            >
-            <div class="grid grid-cols-2 lg:grid-cols-4 w-full">
-              {
-                frontmatter.credits.map((credit) => (
-                  <div class="mt-4">
-                    <Text
-                      tag="p"
-                      variant="textSM"
-                      class="text-base-950  dark:text-white text-balance"
-                    >
-                      {credit.name}
-                    </Text>
-                    <Text
-                      tag="p"
-                      variant="textSM"
-                      class="text-base-500  dark:text-base-400 text-balance"
-                    >
-                      {credit.role}
-                    </Text>
-                  </div>
-                ))
-              }
-            </div>
-          </div>
+          
         </div>
       </div>
       <nav
