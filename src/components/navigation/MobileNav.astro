@@ -17,6 +17,16 @@ import NavigationLinks from "@/components/navigation/NavigationLinks.astro";
         <Logo class="h-8 text-black dark:text-white" />
       </a>
       <div class="ml-auto gap-2 flex items-center col-start-2">
+        <button 
+          id="mobile-search-toggle"
+          class="p-2 text-base-600 hover:text-base-900 dark:text-base-400 dark:hover:text-white transition-colors"
+          aria-label="Open search"
+          title="Search portfolio and blog posts"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </button>
         <ThemeToggle />
         <button
           id="menubutton"

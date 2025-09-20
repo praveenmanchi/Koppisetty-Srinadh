@@ -5,6 +5,7 @@ import Text from "@/components/fundations/elements/Text.astro";
 import Wrapper from "@/components/fundations/containers/Wrapper.astro";
 // Components
 import WorkEntries2 from "@/components/work/WorkEntries2.astro";
+import WorkFilters from "@/components/work/WorkFilters.astro";
 // Content
 import { getCollection } from "astro:content";
 const allWork = await getCollection("work");
@@ -24,7 +25,12 @@ const allWork = await getCollection("work");
           Case Studies
         </Text>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-12 lg:gap-1 mt-4">
+      
+      <!-- Filters -->
+      <WorkFilters allWork={allWork} />
+      
+      <!-- Work Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-12 lg:gap-1" id="work-grid">
         {allWork.map((post) => <WorkEntries2 post={post} />)}
       </div>
     </Wrapper>

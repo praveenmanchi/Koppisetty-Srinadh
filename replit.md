@@ -8,6 +8,12 @@ ProfolioX is a modern portfolio website template built with Astro.js and Tailwin
 - **Server Configuration**: Updated Astro config to bind to 0.0.0.0:5000 for Replit proxy compatibility
 - **Workflow Setup**: Created "Astro Dev Server" workflow for development
 - **Deployment Configuration**: Set up autoscale deployment with build and preview commands
+- **URL Structure Simplified**: Changed URLs from `/work/home` to `/casestudies` and `/forms/contact` to `/contact`
+- **Contact Page Redesign**: Removed forms and added contact details with social media icons
+- **Case Study URLs**: Implemented descriptive URLs for work items (e.g., `/casestudies/sinequanone` instead of `/work/1`)
+- **Redirects**: Added permanent redirects from old numbered URLs and `/work/` URLs to new `/casestudies/` URLs
+- **Layout Updates**: Improved case study layout with full-width description and side-by-side project data and credits
+- **Tools Field**: Added design tools information to project data showcasing tools like Figma, Miro, Adobe Creative Suite, etc.
 
 ## Project Architecture
 - **Frontend Framework**: Astro.js v5.12.9 with modern ESM setup

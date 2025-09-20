@@ -4,7 +4,7 @@ import { Image } from "astro:assets";
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
 const { title, url, work, thumbnail } = {
-  url: "/work/" + Astro.props.post.slug,
+  url: "/casestudies/" + Astro.props.post.slug,
   title: Astro.props.post.data.title,
   work: Astro.props.post.data.work,
   thumbnail: Astro.props.post.data.thumbnail.url,

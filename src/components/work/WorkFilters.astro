@@ -1,0 +1,208 @@
+---
+// Fundations
+import Text from "@/components/fundations/elements/Text.astro";
+import Button from "@/components/fundations/elements/Button.astro";
+
+// Props
+const { allWork } = Astro.props;
+
+// Extract unique values for filters
+const sectors = [...new Set(allWork.map(work => 
+  work.data.projectData?.[0]?.sector
+).filter(Boolean))].sort();
+
+const services = [...new Set(allWork.map(work => 
+  work.data.projectData?.[0]?.service
+).filter(Boolean))].sort();
+
+const tools = [...new Set(allWork.map(work => 
+  work.data.projectData?.[0]?.tools?.split(', ')
+).filter(Boolean).flat())].sort();
+---
+
+<div class="work-filters mb-8">
+  <div class="overflow-hidden mb-4">
+    <Text
+      tag="h2"
+      variant="textLG"
+      class="dark:text-white text-base-900"
+    >
+      Filter Projects
+    </Text>
+  </div>
+  
+  <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-6">
+    <!-- Industry Filter -->
+    <div class="filter-group">
+      <Text tag="label" variant="textSM" class="block mb-2 text-base-600 dark:text-base-400">
+        Industry
+      </Text>
+      <select 
+        id="sector-filter" 
+        class="w-full p-2 border border-base-200 dark:border-base-700 rounded-md bg-white dark:bg-base-800 text-base-900 dark:text-white"
+      >
+        <option value="">All Industries</option>
+        {sectors.map(sector => (
+          <option value={sector}>{sector}</option>
+        ))}
+      </select>
+    </div>
+
+    <!-- Service Filter -->
+    <div class="filter-group">
+      <Text tag="label" variant="textSM" class="block mb-2 text-base-600 dark:text-base-400">
+        Service
+      </Text>
+      <select 
+        id="service-filter" 
+        class="w-full p-2 border border-base-200 dark:border-base-700 rounded-md bg-white dark:bg-base-800 text-base-900 dark:text-white"
+      >
+        <option value="">All Services</option>
+        {services.map(service => (
+          <option value={service}>{service}</option>
+        ))}
+      </select>
+    </div>
+
+    <!-- Tools Filter -->
+    <div class="filter-group">
+      <Text tag="label" variant="textSM" class="block mb-2 text-base-600 dark:text-base-400">
+        Tools
+      </Text>
+      <select 
+        id="tools-filter" 
+        class="w-full p-2 border border-base-200 dark:border-base-700 rounded-md bg-white dark:bg-base-800 text-base-900 dark:text-white"
+      >
+        <option value="">All Tools</option>
+        {tools.map(tool => (
+          <option value={tool}>{tool}</option>
+        ))}
+      </select>
+    </div>
+
+    <!-- Clear Filters Button -->
+    <div class="filter-group flex items-end">
+      <Button 
+        id="clear-filters"
+        variant="secondary" 
+        size="small"
+        class="w-full"
+      >
+        Clear Filters
+      </Button>
+    </div>
+  </div>
+
+  <!-- Results Count -->
+  <div class="flex items-center justify-between mb-4 pt-4 border-t border-base-200 dark:border-base-700">
+    <Text 
+      id="results-count" 
+      variant="textSM" 
+      class="text-base-600 dark:text-base-400"
+    >
+      Showing {allWork.length} projects
+    </Text>
+    
+    <!-- Active Filters Display -->
+    <div id="active-filters" class="flex gap-2 flex-wrap">
+      <!-- Active filter tags will be dynamically added here -->
+    </div>
+  </div>
+</div>
+
+<script>
+  // Filter functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const sectorFilter = document.getElementById('sector-filter');
+    const serviceFilter = document.getElementById('service-filter');
+    const toolsFilter = document.getElementById('tools-filter');
+    const clearFiltersBtn = document.getElementById('clear-filters');
+    const resultsCount = document.getElementById('results-count');
+    const activeFiltersContainer = document.getElementById('active-filters');
+    const workItems = document.querySelectorAll('.work-item');
+
+    function filterWork() {
+      const sectorValue = sectorFilter.value.toLowerCase();
+      const serviceValue = serviceFilter.value.toLowerCase();
+      const toolsValue = toolsFilter.value.toLowerCase();
+      
+      let visibleCount = 0;
+      
+      workItems.forEach(item => {
+        const itemSector = item.dataset.sector?.toLowerCase() || '';
+        const itemService = item.dataset.service?.toLowerCase() || '';
+        const itemTools = item.dataset.tools?.toLowerCase() || '';
+        
+        const matchesSector = !sectorValue || itemSector.includes(sectorValue);
+        const matchesService = !serviceValue || itemService.includes(serviceValue);
+        const matchesTools = !toolsValue || itemTools.includes(toolsValue);
+        
+        const shouldShow = matchesSector && matchesService && matchesTools;
+        
+        if (shouldShow) {
+          item.style.display = 'block';
+          visibleCount++;
+        } else {
+          item.style.display = 'none';
+        }
+      });
+      
+      // Update results count
+      resultsCount.textContent = `Showing ${visibleCount} project${visibleCount !== 1 ? 's' : ''}`;
+      
+      // Update active filters display
+      updateActiveFilters();
+    }
+
+    function updateActiveFilters() {
+      const activeFilters = [];
+      
+      if (sectorFilter.value) {
+        activeFilters.push({ type: 'Industry', value: sectorFilter.value, filter: sectorFilter });
+      }
+      if (serviceFilter.value) {
+        activeFilters.push({ type: 'Service', value: serviceFilter.value, filter: serviceFilter });
+      }
+      if (toolsFilter.value) {
+        activeFilters.push({ type: 'Tools', value: toolsFilter.value, filter: toolsFilter });
+      }
+      
+      activeFiltersContainer.innerHTML = activeFilters.map(filter => `
+        <span class="inline-flex items-center gap-1 px-2 py-1 bg-accent-100 dark:bg-accent-900 text-accent-700 dark:text-accent-300 text-xs rounded-md">
+          ${filter.type}: ${filter.value}
+          <button 
+            class="remove-filter hover:text-accent-900 dark:hover:text-accent-100" 
+            data-filter-type="${filter.type.toLowerCase()}"
+            aria-label="Remove ${filter.type} filter"
+          >
+            ×
+          </button>
+        </span>
+      `).join('');
+      
+      // Add event listeners to remove filter buttons
+      document.querySelectorAll('.remove-filter').forEach(btn => {
+        btn.addEventListener('click', function() {
+          const filterType = this.dataset.filterType;
+          if (filterType === 'industry') sectorFilter.value = '';
+          if (filterType === 'service') serviceFilter.value = '';
+          if (filterType === 'tools') toolsFilter.value = '';
+          filterWork();
+        });
+      });
+    }
+
+    function clearAllFilters() {
+      sectorFilter.value = '';
+      serviceFilter.value = '';
+      toolsFilter.value = '';
+      filterWork();
+    }
+
+    // Event listeners
+    sectorFilter.addEventListener('change', filterWork);
+    serviceFilter.addEventListener('change', filterWork);
+    toolsFilter.addEventListener('change', filterWork);
+    clearFiltersBtn.addEventListener('click', clearAllFilters);
+  });
+</script>

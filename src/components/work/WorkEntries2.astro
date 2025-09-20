@@ -3,15 +3,24 @@
 import { Image } from "astro:assets";
 // Fundations
 import Text from "@/components/fundations/elements/Text.astro";
-const { title, url, description, thumbnail } = {
-  url: "/work/" + Astro.props.post.slug,
+const { title, url, description, thumbnail, sector, service, tools } = {
+  url: "/casestudies/" + Astro.props.post.slug,
   title: Astro.props.post.data.title,
   description: Astro.props.post.data.description,
   thumbnail: Astro.props.post.data.thumbnail.url,
+  sector: Astro.props.post.data.projectData?.[0]?.sector || '',
+  service: Astro.props.post.data.projectData?.[0]?.service || '',
+  tools: Astro.props.post.data.projectData?.[0]?.tools || '',
 };
 ---
 
-<div class="relative group" data-animate>
+<div 
+  class="relative group work-item" 
+  data-animate
+  data-sector={sector}
+  data-service={service}
+  data-tools={tools}
+>
   <a class="absolute inset-0 z-10" href={url} title={title}></a>
   <div class="relative">
     <Image

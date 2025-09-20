@@ -84,6 +84,84 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
               </div>
             </div>
 
+            <!-- Availability Status -->
+            <div class="pt-8 border-t border-base-200 dark:border-base-800">
+              <Text tag="h3" variant="textSM" class="font-medium uppercase text-base-900 dark:text-white mb-4">
+                Availability & Timeline
+              </Text>
+              
+              <!-- Current Status -->
+              <div class="mb-6">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="w-3 h-3 rounded-full bg-amber-500 animate-pulse"></div>
+                  <Text tag="p" variant="textSM" class="font-medium text-amber-600 dark:text-amber-400">
+                    Booking projects for Q1 2026
+                  </Text>
+                </div>
+                <Text tag="p" variant="textSM" class="text-base-500 dark:text-base-300">
+                  Currently booking new design projects and collaborations for early Q1 2026 start dates. Limited spots available.
+                </Text>
+              </div>
+
+              <!-- Project Timelines -->
+              <div class="space-y-4 mb-6">
+                <Text tag="h4" variant="textSM" class="font-medium text-base-900 dark:text-white">
+                  Typical Project Timelines:
+                </Text>
+                <div class="space-y-3 text-sm">
+                  <div class="flex justify-between items-center">
+                    <span class="text-base-600 dark:text-base-300">Brand Identity & Logo</span>
+                    <span class="text-base-500 dark:text-base-400">2-3 weeks</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-base-600 dark:text-base-300">Website Design & Development</span>
+                    <span class="text-base-500 dark:text-base-400">4-8 weeks</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-base-600 dark:text-base-300">Mobile App Design</span>
+                    <span class="text-base-500 dark:text-base-400">6-10 weeks</span>
+                  </div>
+                  <div class="flex justify-between items-center">
+                    <span class="text-base-600 dark:text-base-300">E-commerce Platform</span>
+                    <span class="text-base-500 dark:text-base-400">8-12 weeks</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Working Preferences -->
+              <div class="space-y-4 mb-6">
+                <Text tag="h4" variant="textSM" class="font-medium text-base-900 dark:text-white">
+                  Working Preferences:
+                </Text>
+                <div class="space-y-2 text-sm">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-base-600 dark:text-base-300">Remote-friendly (CST timezone)</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-base-600 dark:text-base-300">Weekly check-ins and progress updates</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-base-600 dark:text-base-300">Collaborative design process</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-accent-500" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                    </svg>
+                    <span class="text-base-600 dark:text-base-300">Response within 24-48 hours</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- Social Media Links -->
             <div class="pt-8 border-t border-base-200 dark:border-base-800">
               <Text tag="h3" variant="textSM" class="font-medium uppercase text-base-900 dark:text-white mb-4">
@@ -122,14 +200,46 @@ import Wrapper from "@/components/fundations/containers/Wrapper.astro";
           </div>
         </div>
 
-        <!-- Right: PDF preview -->
-        <div class="w-full">
-          <iframe
-            src="https://drive.google.com/file/d/1MXy7adBMmmCO8UgsjVjFYhLHzL0jeqdo/preview"
-            title="Preview PDF"
-            loading="lazy"
-            class="w-full h-[800px] border rounded-lg"
-          ></iframe>
+        <!-- Right: Resume and Project Info -->
+        <div class="w-full space-y-8">
+          <!-- Resume Download -->
+          <div class="bg-base-50 dark:bg-base-900 p-6 rounded-lg">
+            <div class="flex items-center justify-between mb-4">
+              <div>
+                <Text tag="h3" variant="textLG" class="text-base-900 dark:text-white font-medium">
+                  Resume & Portfolio
+                </Text>
+                <Text tag="p" variant="textSM" class="text-base-500 dark:text-base-400 mt-1">
+                  Download my complete resume and portfolio details
+                </Text>
+              </div>
+              <svg class="w-8 h-8 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a 
+                href="https://drive.google.com/file/d/1MXy7adBMmmCO8UgsjVjFYhLHzL0jeqdo/preview" 
+                target="_blank"
+                class="flex items-center justify-center gap-2 px-4 py-3 bg-accent-500 hover:bg-accent-600 text-white rounded-md transition-colors duration-300 font-medium"
+              >
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3M7 7h.01M17 7h.01"></path>
+                </svg>
+                Download Resume
+              </a>
+            </div>
+          </div>
+
+<!-- PDF preview (smaller) -->
+          <div class="hidden lg:block">
+            <iframe
+              src="https://drive.google.com/file/d/1MXy7adBMmmCO8UgsjVjFYhLHzL0jeqdo/preview"
+              title="Preview PDF"
+              loading="lazy"
+              class="w-full h-[500px] border rounded-lg"
+            ></iframe>
+          </div>
         </div>
       </div>
     </Wrapper>

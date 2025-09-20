@@ -27,6 +27,23 @@ const work = defineCollection({
         })
       )
       .optional(),
+    process: z
+      .array(
+        z.object({
+          title: z.string().optional(),
+          paragraphs: z.array(z.string()).optional(),
+        })
+      )
+      .optional(),
+    results: z
+      .array(
+        z.object({
+          metric: z.string(),
+          value: z.string(),
+          improvement: z.string().optional(),
+        })
+      )
+      .optional(),
     projectData: z
       .array(
         z.object({
@@ -34,6 +51,7 @@ const work = defineCollection({
           service: z.string(),
           sector: z.string(),
           year: z.string(),
+          tools: z.string().optional(),
         })
       )
       .optional(),

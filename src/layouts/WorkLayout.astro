@@ -48,7 +48,8 @@ const { frontmatter, previous, next } = Astro.props;
           </svg>
         </a>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 mt-2 items-start gap-8">
+      <!-- Title Section -->
+      <div class="mt-2">
         <div class="overflow-hidden">
           <Text
             tag="h1"
@@ -60,6 +61,21 @@ const { frontmatter, previous, next } = Astro.props;
             {frontmatter.title}
           </Text>
         </div>
+      </div>
+
+      <!-- Description Section - Full Width -->
+      <div class="mt-6">
+        <Text
+          tag="p"
+          variant="textBase"
+          class="text-base-500 dark:text-base-400 w-full"
+        >
+          {frontmatter.description}
+        </Text>
+      </div>
+
+      <!-- Intro and Project Data Side by Side -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 mt-8 items-start gap-8">
         <div>
           <Wrapper variant="prose" class="-mt-4">
             {
@@ -76,52 +92,57 @@ const { frontmatter, previous, next } = Astro.props;
                 ))
             }
           </Wrapper>
+        </div>
+        
+        <!-- Project Data and Credits Side by Side -->
+        <div class="space-y-8">
           {
-            frontmatter.projectData.map((credit) => (
-              <div class="grid grid-cols-2  gap-4 ">
-                {Object.keys(credit).map((key) => (
+            frontmatter.projectData.map((data) => (
+              <div class="grid grid-cols-2 gap-4">
+                {Object.keys(data).map((key) => (
                   <div>
                     <Text
                       tag="h4"
-                      variant="textBase"
-                      class="text-base-950  dark:text-white  capitalize"
+                      variant="textSM"
+                      class="text-base-950 dark:text-white capitalize font-medium"
                     >
                       {key}
                     </Text>
                     <Text
                       tag="p"
                       variant="textSM"
-                      class="text-base-500  dark:text-base-400 text-balance"
+                      class="text-base-500 dark:text-base-400 text-balance"
                     >
-                      {credit[key]}
+                      {data[key]}
                     </Text>
                   </div>
                 ))}
               </div>
             ))
           }
-        </div>
-        <div class="mt-8">
+          
+          <!-- Credits -->
+          <div>
             <Text
               tag="h4"
               variant="textSM"
-              class="dark:text-white text-base-900">Credits</Text
+              class="dark:text-white text-base-900 font-medium mb-4">Credits</Text
             >
-            <div class="grid grid-cols-2 lg:grid-cols-4 w-full">
+            <div class="grid grid-cols-2 gap-4">
               {
                 frontmatter.credits.map((credit) => (
-                  <div class="mt-4">
+                  <div>
                     <Text
                       tag="p"
                       variant="textSM"
-                      class="text-base-950  dark:text-white text-balance"
+                      class="text-base-950 dark:text-white text-balance font-medium"
                     >
                       {credit.name}
                     </Text>
                     <Text
                       tag="p"
                       variant="textSM"
-                      class="text-base-500  dark:text-base-400 text-balance"
+                      class="text-base-500 dark:text-base-400 text-balance"
                     >
                       {credit.role}
                     </Text>
@@ -130,6 +151,7 @@ const { frontmatter, previous, next } = Astro.props;
               }
             </div>
           </div>
+        </div>
       </div>
       <div class="grid grid-cols-2 gap-1 mt-8">
         {
@@ -210,7 +232,6 @@ const { frontmatter, previous, next } = Astro.props;
                 ))
             }
           </div>
-          
         </div>
       </div>
       <nav
@@ -219,7 +240,7 @@ const { frontmatter, previous, next } = Astro.props;
         <div>
           {
             previous && (
-              <a href={`/work//${previous.slug}`} class="hover:opacity-80 ">
+              <a href={`/casestudies/${previous.slug}`} class="hover:opacity-80 ">
                 <span class="block  text-base-900 dark:text-white font-medium uppercase">
                   Previous:
                 </span>
@@ -234,7 +255,7 @@ const { frontmatter, previous, next } = Astro.props;
           {
             next && (
               <a
-                href={`/work/${next.slug}`}
+                href={`/casestudies/${next.slug}`}
                 class=" hover:opacity-80 text-right"
               >
                 <span class="block  text-base-900 dark:text-white font-medium uppercase ">
