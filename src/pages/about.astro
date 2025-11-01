@@ -1,7 +1,7 @@
 ---
 // Assets
 import { Image } from "astro:assets";
-import Avatar from "@/images/avatar.jpeg";
+import Avatar from "@/images/banner.png";
 // Fundations
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import Text from "@/components/fundations/elements/Text.astro";
@@ -12,57 +12,50 @@ import LogoCloud from "@/components/assets/LogoCloud.astro";
 const awards = [
   {
     url: "#_",
-    name: "Koppisetty Srinadh",
-    award: "Automobile Workshop Participant",
-    organization: "Renault Company",
-    project: "Automobile Workshop",
+    name: "Srinadh Koppisetti",
+    award: "Digital Experience Innovation Award",
+    organization: "Goldman Sachs PWM",
+    project: "Client Onboarding Platform (2023)",
   },
   {
     url: "#_",
-    name: "Koppisetty Srinadh",
-    award: "Member",
-    organization: "Rotary Club of GITAM University",
-    project: "University Chapter",
+    name: "Srinadh Koppisetti",
+    award: "Design Excellence Shoutout",
+    organization: "Walmart Business",
+    project: "B2B Procurement Platform (2024)",
   },
 ];
 // Experience
-// Experience / Education & Projects (from resume)
 const experience = [
   {
-    yearStart: "2018",
-    yearEnd: "2018",
-    role: "Industrial Trainee — Compressor Designs",
-    company: "BHEL, Hyderabad (2 months)",
+    yearStart: "08/2024",
+    yearEnd: "Present",
+    role: "Senior UX/UI Interface Designer",
+    company: "Goldman Sachs, New York",
   },
   {
-    yearStart: "2018",
-    yearEnd: "2018",
-    role: "Industrial Trainee — Compressor Designs",
-    company: "CIPET, Vijayawada (2 months)",
+    yearStart: "09/2020",
+    yearEnd: "06/2023",
+    role: "UX/UI Designer",
+    company: "Walmart, Bangalore, India",
   },
   {
-    yearStart: "2018",
-    yearEnd: "2018",
-    role: "Project Intern — Manufacturing of Cylinder Liners",
-    company: "Kusalava Ltd, VSEZ Visakhapatnam",
+    yearStart: "05/2018",
+    yearEnd: "08/2020",
+    role: "UX Designer",
+    company: "Accenture, Hyderabad, India",
   },
   {
-    yearStart: "2014",
-    yearEnd: "2018",
-    role: "B.Tech in Mechanical Engineering — CGPA 6.78",
-    company: "GITAM Institute of Technology, GITAM University",
+    yearStart: "08/2023",
+    yearEnd: "05/2025",
+    role: "Master of Science — Information Systems",
+    company: "Auburn University at Montgomery",
   },
   {
-    yearStart: "2012",
-    yearEnd: "2014",
-    role: "Intermediate (MPC) — 79.8%",
-    company: "Sashi College, Velivennu",
-  },
-  {
-    yearStart: "2012",
-    yearEnd: "2012",
-    role: "CBSE — CGPA 7.2",
-    company: "C R Reddy School, Eluru",
+    yearStart: "03/2014",
+    yearEnd: "05/2018",
+    role: "Bachelor of Engineering — Mechanical Engineering",
+    company: "Gandhi Institute of Technology and Management",
   },
 ];
 ---
@@ -87,34 +80,83 @@ const experience = [
           variant="textBase"
           class="mt-2 text-base-500 dark:text-base-300 lg:text-balance order-first lg:order-last"
         >
-          I'm <strong>Koppisetty Srinadh</strong>, a UX/UI Designer and Product Designer with 7+ years of experience creating impactful digital experiences. I specialize in end-to-end design for web, mobile, and enterprise platforms across AI/ML, fintech, healthcare, and SaaS industries.
+          I'm <strong>Srinadh Koppisetti</strong>, a Senior UX/UI Designer with 5+ years of experience creating intuitive digital experiences across enterprise and consumer products. I specialize in user research, design systems, and data-driven design that bridges user needs with business goals.
           <br />
           <br />
           <strong>My Expertise:</strong><br />
-          • User Research & Strategy: Conducted 200+ user interviews and usability tests, leading to 40% improvement in user satisfaction
-          • Design Systems: Built scalable design systems used by 15+ product teams, reducing design-to-dev handoff time by 60%
-          • Enterprise Platforms: Led UX for applications serving 10K+ users, generating $2M+ in weekly revenue
-          • Cross-functional Leadership: Collaborated with engineering, product, and business teams in Agile environments
+          • User Research & Strategy: Conducted 100+ usability tests and stakeholder interviews, improving task completion rates by 25%
+          • Design Systems: Developed unified design systems across 15+ applications, saving 180 developer hours per sprint
+          • Enterprise Platforms: Led UX redesigns reducing onboarding time by 30% and managing $2.4B+ in assets
+          • Cross-functional Leadership: Collaborated across 4 global time zones with Product, Engineering, and Compliance teams
           <br />
           <br />
           <strong>Notable Achievements:</strong><br />
-          • Increased mobile app engagement by 85% through user-centered redesign
-          • Reduced e-commerce checkout abandonment by 45% via conversion optimization
-          • Led design for AI-powered platforms that improved operational efficiency by 30%
-          • Mentored 25+ designers and contributed to design community through workshops and articles
+          • Reduced client onboarding time by 30% at Goldman Sachs (45 mins to 31 mins per client)
+          • Improved cart abandonment by 26% and reorder frequency by 18% at Walmart Business
+          • Achieved 98% WCAG accessibility compliance across multiple platforms
+          • Cut design handoff time by 60% through scalable component libraries
           <br />
           <br />
-          <strong>My Approach:</strong> I combine Design Thinking methodology with data-driven insights to solve complex user problems. I believe great design balances user needs, business goals, and technical constraints while maintaining accessibility and inclusive design principles.
+          <strong>My Approach:</strong> I combine Design Thinking methodology with behavioral analytics to solve complex problems. I believe great design balances empathy, data-driven insights, and technical scalability while maintaining accessibility and inclusive design principles.
         </Text>
 
         <Image
           width={1000}
           height={2000}
           src={Avatar}
-          alt="Koppisetty Srinadh - UX/UI Designer Portfolio"
+          alt="Srinadh Koppisetti - UX/UI Designer Portfolio"
           class="w-full aspect-square mt-2 object-cover object-right"
         />
       </div>
+    </Wrapper>
+  </section>
+  
+  
+  <section class="overflow-hidden relative">
+    <Wrapper class="py-12">
+      <div class="overflow-hidden">
+        <Text
+          tag="h3"
+          variant="textLG"
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          class="dark:text-white text-base-900 text-balance"
+        >
+          Experience
+        </Text>
+      </div>
+      <ul
+        role="list"
+        class="grid grid-cols-2 md:grid-cols-3 gap-y-8 mt-1 relative before:absolute after:absolute before:bg-black after:bg-base-200 dark:before:bg-base-50 dark:after:bg-base-50/10 before:top-0 before:left-0 before:h-px before:w-18 after:top-0 divide-base-200 dark:divide-base-900 after:right-0 after:left-20 after:h-px"
+      >
+        {
+          experience.map((job) => (
+            <li class=" items-baseline lg:grid-cols-4 py-2 ">
+              <Text
+                tag="h3"
+                variant="textBase"
+                class="text-base-900  dark:text-white"
+              >
+                {job.yearStart} - {job.yearEnd}
+              </Text>
+              <Text
+                tag="p"
+                variant="textSM"
+                class="text-base-500 dark:text-base-400"
+              >
+                {job.role}
+              </Text>
+              <Text
+                tag="p"
+                variant="textSM"
+                class="text-base-500 dark:text-base-500"
+              >
+                {job.company}
+              </Text>
+            </li>
+          ))
+        }
+      </ul>
     </Wrapper>
   </section>
   <section>
@@ -170,54 +212,6 @@ const experience = [
                 class="text-base-500 dark:text-base-600"
               >
                 {award.project}
-              </Text>
-            </li>
-          ))
-        }
-      </ul>
-    </Wrapper>
-  </section>
-  <LogoCloud />
-  <section class="overflow-hidden relative">
-    <Wrapper class="py-12">
-      <div class="overflow-hidden">
-        <Text
-          tag="h3"
-          variant="textLG"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-          class="dark:text-white text-base-900 text-balance"
-        >
-          Experience
-        </Text>
-      </div>
-      <ul
-        role="list"
-        class="grid grid-cols-2 md:grid-cols-3 gap-y-8 mt-1 relative before:absolute after:absolute before:bg-black after:bg-base-200 dark:before:bg-base-50 dark:after:bg-base-50/10 before:top-0 before:left-0 before:h-px before:w-18 after:top-0 divide-base-200 dark:divide-base-900 after:right-0 after:left-20 after:h-px"
-      >
-        {
-          experience.map((job) => (
-            <li class=" items-baseline lg:grid-cols-4 py-2 ">
-              <Text
-                tag="h3"
-                variant="textBase"
-                class="text-base-900  dark:text-white"
-              >
-                {job.yearStart} - {job.yearEnd}
-              </Text>
-              <Text
-                tag="p"
-                variant="textSM"
-                class="text-base-500 dark:text-base-400"
-              >
-                {job.role}
-              </Text>
-              <Text
-                tag="p"
-                variant="textSM"
-                class="text-base-500 dark:text-base-500"
-              >
-                {job.company}
               </Text>
             </li>
           ))
